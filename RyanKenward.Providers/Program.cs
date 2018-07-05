@@ -6,6 +6,11 @@ namespace RyanKenward.Providers
 {
     class MainClass
     {
+        /// <summary>
+        /// The entry point of the program, where the program control starts and ends.
+        /// Given a valid provider name, outputs the provider terms and rates.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
             if (args.Length != 1)
@@ -26,9 +31,12 @@ namespace RyanKenward.Providers
                     return;
             }
 
+            // factory creates the specified provider
             var provider = providerFactory.GetProvider();
+            // gets specific rates for specified provider
             var indexRates = provider.GetRates();
 
+            // builds output of provider details
             var output = string.Empty;
             var stringBuilder = new StringBuilder();
             stringBuilder.Append("Your rate options:\n\r");

@@ -4,10 +4,10 @@ namespace RyanKenward.Providers.Models
 {
     public class Provider1 : ProviderBase
     {
-        public Provider1()
-        {
-        }
-
+        /// <summary>
+        /// Gets the rates for Provider1.
+        /// </summary>
+        /// <returns>The rates.</returns>
         public override IEnumerable<IndexRate> GetRates()
         {
             // calls API to get rates
